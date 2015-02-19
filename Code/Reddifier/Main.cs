@@ -104,6 +104,7 @@ namespace Reddifier
                 tb_subred.Enabled = false;
                 tb_freq.Enabled = false;
                 status = Status.Running;
+                timeLeft = 0;
                 timer.Start();
             }
             else
@@ -188,7 +189,7 @@ namespace Reddifier
                 showOnTop();
                 
 
-                int before = dg_posts.RowCount - 1;
+                int before = dg_posts.RowCount;
 
                 queue.Reverse();
                 foreach (RedPost post in queue)
@@ -200,7 +201,7 @@ namespace Reddifier
                 if (useSound)
                     player.Play();
 
-                if (before != -1) {
+                if (before != 0) {
                     int after = dg_posts.RowCount - 1;
 
                     for (int i = before; i <= after; i++)
