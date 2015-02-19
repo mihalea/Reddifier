@@ -46,10 +46,10 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_minimize = new System.Windows.Forms.ToolStripMenuItem();
             this.mi_sound = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.worker = new System.ComponentModel.BackgroundWorker();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.worker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dg_posts)).BeginInit();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -69,6 +69,9 @@
             this.dg_posts.AllowUserToAddRows = false;
             this.dg_posts.AllowUserToDeleteRows = false;
             this.dg_posts.AllowUserToResizeRows = false;
+            this.dg_posts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dg_posts.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dg_posts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_posts.Location = new System.Drawing.Point(12, 105);
@@ -108,6 +111,8 @@
             // 
             // tb_subred
             // 
+            this.tb_subred.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_subred.Location = new System.Drawing.Point(70, 79);
             this.tb_subred.Name = "tb_subred";
             this.tb_subred.Size = new System.Drawing.Size(197, 20);
@@ -116,6 +121,7 @@
             // 
             // lb_freq
             // 
+            this.lb_freq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_freq.AutoSize = true;
             this.lb_freq.Location = new System.Drawing.Point(288, 82);
             this.lb_freq.Name = "lb_freq";
@@ -125,6 +131,7 @@
             // 
             // tb_freq
             // 
+            this.tb_freq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_freq.Location = new System.Drawing.Point(368, 79);
             this.tb_freq.MaxLength = 4;
             this.tb_freq.Name = "tb_freq";
@@ -136,6 +143,7 @@
             // 
             // lb_separator
             // 
+            this.lb_separator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_separator.AutoSize = true;
             this.lb_separator.Location = new System.Drawing.Point(273, 82);
             this.lb_separator.Name = "lb_separator";
@@ -145,6 +153,8 @@
             // 
             // btn_toggle
             // 
+            this.btn_toggle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_toggle.Location = new System.Drawing.Point(12, 27);
             this.btn_toggle.Name = "btn_toggle";
             this.btn_toggle.Size = new System.Drawing.Size(460, 43);
@@ -217,17 +227,6 @@
             this.mi_sound.Text = "Sound notifier";
             this.mi_sound.Click += new System.EventHandler(this.mi_sound_Click);
             // 
-            // timer
-            // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // worker
-            // 
-            this.worker.WorkerReportsProgress = true;
-            this.worker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.worker_DoWork);
-            this.worker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.worker_RunWorkerCompleted);
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -239,9 +238,20 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // worker
+            // 
+            this.worker.WorkerReportsProgress = true;
+            this.worker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.worker_DoWork);
+            this.worker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.worker_RunWorkerCompleted);
             // 
             // Main
             // 
@@ -258,6 +268,7 @@
             this.Controls.Add(this.dg_posts);
             this.Controls.Add(this.lb_subred);
             this.MainMenuStrip = this.menuStrip;
+            this.MinimumSize = new System.Drawing.Size(300, 400);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reddifier";
